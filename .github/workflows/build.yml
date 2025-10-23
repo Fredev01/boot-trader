@@ -24,5 +24,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Compilar código
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         run: |
           python3 main.py
